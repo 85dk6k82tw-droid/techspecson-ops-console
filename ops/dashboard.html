@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TSO Ops Dashboard</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #0078d7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TSO Ops Console</h1>
+    <p>Operational Dashboard — Live Systems Overview</p>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="system-health.html">System Health</a>
+      <a href="emergency.html">Emergency Response</a>
+      <a href="docs.html">Docs</a>
+    </nav>
+  </header>
+
+  <main class="dashboard">
+    <div class="card">
+      <h3>Network Status</h3>
+      <p>All nodes operational — no outages detected.</p>
+    </div>
+    <div class="card">
+      <h3>Field Teams</h3>
+      <p>3 active deployments in Louisiana and Nevada.</p>
+    </div>
+    <div class="card">
+      <h3>Solar Systems</h3>
+      <p>98% uptime across all HooMe units.</p>
+    </div>
+    <div class="card">
+      <h3>Alerts</h3>
+      <p>No critical events reported in the last 24 hours.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 TechSpecsOn LLC — Operational Integrity Division</p>
+  </footer>
+</body>
+</html>
 
