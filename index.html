@@ -3,35 +3,283 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TechSpecsOn | HooMe Homepage</title>
+  <title>TechSpecsOn | TSO Ops Console & HooMe Homepage</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .hero {
+      background: white;
+      padding: 3rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #1a1a2e;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .link-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .link-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .link-card h3 {
+      color: #1a1a2e;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .link-card p {
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .link-card a {
+      display: inline-block;
+      background-color: #16213e;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    .link-card a:hover {
+      background-color: #0f1427;
+    }
+
+    .features {
+      background: white;
+      padding: 3rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .features h2 {
+      color: #1a1a2e;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-item {
+      padding: 1.5rem;
+      border-left: 4px solid #16213e;
+    }
+
+    .feature-item h3 {
+      color: #1a1a2e;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-item p {
+      color: #666;
+    }
+
+    footer {
+      background-color: #1a1a2e;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    footer p {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      nav {
+        gap: 1rem;
+        flex-direction: column;
+      }
+
+      nav a {
+        display: block;
+      }
+
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+
+      .quick-links {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Respect The Tech</h1>
-    <p>Infrastructure Without Excuses</p>
+    <h1>Respect The Tech</h1>
+    <p>Infrastructure Without Excuses — TSO Ops Console</p>
     <nav>
-      <a href="/ops/dashboard.html">Dashboard</a>
-      <a href="/ops/system-health.html">System Health</a>
-      <a href="/ops/emergency.html">Emergency Response</a>
-      <a href="/ops/docs.html">Docs</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#health">System Health</a>
+      <a href="#emergency">Emergency Response</a>
+      <a href="#docs">Documentation</a>
     </nav>
   </header>
 
   <main>
-    <section>
-      <h2>Welcome to HooMe</h2>
-      <p>Powered by TechSpecsOn LLC — Cincinnati HQ • SAM.gov Verified • 513‑299‑8169</p>
+    <section class="hero">
+      <h2>Welcome to TSO Ops Console</h2>
+      <p>Powered by TechSpecsOn LLC — Cincinnati HQ • SAM.gov Verified • 513‑299‑8169</p>
+      <p style="font-size: 1rem; color: #999;">Delivering smart infrastructure solutions with integrity and excellence.</p>
     </section>
-    <section>
-      <h3>Smart Delivery & Remote Support</h3>
-      <p>Solar parcel systems, IoT monitoring, and digital inclusion for every community.</p>
+
+    <section class="quick-links">
+      <div class="link-card">
+        <h3>📊 Operations Dashboard</h3>
+        <p>Real-time monitoring and management of all infrastructure systems.</p>
+        <a href="/ops/dashboard.html">Access Dashboard</a>
+      </div>
+      <div class="link-card">
+        <h3>❤️ System Health</h3>
+        <p>Monitor system status, performance metrics, and resource utilization.</p>
+        <a href="/ops/system-health.html">View Health</a>
+      </div>
+      <div class="link-card">
+        <h3>🚨 Emergency Response</h3>
+        <p>Rapid response protocols and incident management tools.</p>
+        <a href="/ops/emergency.html">Emergency Tools</a>
+      </div>
+      <div class="link-card">
+        <h3>📚 Documentation</h3>
+        <p>Complete guides, API documentation, and operational procedures.</p>
+        <a href="/ops/docs.html">View Docs</a>
+      </div>
+    </section>
+
+    <section class="features">
+      <h2>Smart Delivery & Remote Support</h2>
+      <div class="feature-list">
+        <div class="feature-item">
+          <h3>🌐 Solar Parcel Systems</h3>
+          <p>Advanced tracking and management for solar-powered parcel delivery systems across communities.</p>
+        </div>
+        <div class="feature-item">
+          <h3>📡 IoT Monitoring</h3>
+          <p>Real-time IoT device monitoring, data collection, and analytics for comprehensive infrastructure insights.</p>
+        </div>
+        <div class="feature-item">
+          <h3>🤝 Digital Inclusion</h3>
+          <p>Bridging the digital divide with inclusive technology solutions for every community we serve.</p>
+        </div>
+        <div class="feature-item">
+          <h3>🛡️ Reliability First</h3>
+          <p>Enterprise-grade infrastructure with 99.9% uptime SLA and dedicated support.</p>
+        </div>
+        <div class="feature-item">
+          <h3>🔒 Security & Compliance</h3>
+          <p>Federal compliance, encryption standards, and continuous security monitoring.</p>
+        </div>
+        <div class="feature-item">
+          <h3>🚀 Scalable Architecture</h3>
+          <p>Cloud-native design that scales with your operational demands.</p>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 TechSpecsOn LLC — All Rights Reserved.</p>
+    <p>© 2026 TechSpecsOn LLC — All Rights Reserved.</p>
+    <p style="font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.8;">
+      Cincinnati HQ • Federal Compliance Verified • <a href="tel:513-299-8169" style="color: white; text-decoration: none;">513‑299‑8169</a>
+    </p>
   </footer>
 </body>
 </html>
-
