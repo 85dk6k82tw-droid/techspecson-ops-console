@@ -1,1 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emergency Response | TSO Ops Console</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    body {
+      background-color: #0d0f12;
+      color: #e6e6e6;
+      font-family: "Segoe UI", Roboto, sans-serif;
+    }
+
+    header {
+      background: linear-gradient(90deg, #0a0a0a, #111827);
+      color: #ff4444;
+      text-align: center;
+      padding: 2rem 1rem;
+      border-bottom: 2px solid #ff444433;
+    }
+
+    nav a {
+      color: #ff8888;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 8px #ff4444;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .card {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 0 12px rgba(255, 68, 68, 0.08);
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 18px rgba(255, 68, 68, 0.18);
+    }
+
+    .card h3 {
+      color: #ff6666;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    .status {
+      font-weight: bold;
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    .ok { background-color: #065f46; color: #a7f3d0; }
+    .warn { background-color: #92400e; color: #fcd34d; }
+    .crit { background-color: #7f1d1d; color: #fecaca; }
+
+    footer {
+      background-color: #0a0a0a;
+      color: #6b7280;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      border-top: 1px solid #1f2937;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Emergency Response</h1>
+    <p>Live Crisis Monitoring — Weather • Outages • Field Teams</p>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="system-health.html">System Health</a>
+      <a href="docs.html">Docs</a>
+    </nav>
+  </header>
+
+  <main class="grid">
+
+    <!-- WEATHER RADAR -->
+    <div class="card">
+      <h3>Weather Radar (Live)</h3>
+      <span class="status warn">Monitoring</span>
+      <iframe src="https://embed.windy.com/embed2.html?lat=31.6&lon=-92.0&zoom=6&level=surface&overlay=radar"></iframe>
+      <p>Real‑time radar for Louisiana & Gulf region.</p>
+    </div>
+
+    <!-- DOWNDETECTOR -->
+    <div class="card">
+      <h3>Service Outages</h3>
+      <span class="status warn">Watching</span>
+      <iframe src="https://downdetector.com/"></iframe>
+      <p>Live outage reports across major carriers & ISPs.</p>
+    </div>
+
+    <!-- FEMA ALERTS -->
+    <div class="card">
+      <h3>FEMA Alerts</h3>
+      <span class="status ok">No Active Warnings</span>
+      <iframe src="https://www.fema.gov/api/open/v2/DisasterDeclarationsSummaries"></iframe>
+      <p>Federal disaster declarations & emergency notices.</p>
+    </div>
+
+    <!-- FIELD TEAM DEPLOYMENT -->
+    <div class="card">
+      <h3>Field Team Deployment</h3>
+      <span class="status ok">Teams Ready</span>
+      <ul>
+        <li><strong>Unit A:</strong> Monroe / Swartz — On standby</li>
+        <li><strong>Unit B:</strong> Baton Rouge — Solar recovery</li>
+        <li><strong>Unit C:</strong> Las Vegas — Network support</li>
+      </ul>
+      <p>Deployment map & live GPS coming soon.</p>
+    </div>
+
+    <!-- POWER GRID -->
+    <div class="card">
+      <h3>Power Grid Status</h3>
+      <span class="status ok">Stable</span>
+      <iframe src="https://www.ercot.com/gridmktinfo/dashboards"></iframe>
+      <p>Regional grid load & outage conditions.</p>
+    </div>
+
+    <!-- COMMUNICATIONS -->
+    <div class="card">
+      <h3>Communications Systems</h3>
+      <span class="status ok">Operational</span>
+      <p>Radio, LTE, and satellite links are stable.</p>
+      <p>Next update in 5 minutes.</p>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2026 TechSpecsOn LLC — Emergency Response Division</p>
+  </footer>
+
+</body>
+</html>
 
